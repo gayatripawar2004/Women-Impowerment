@@ -1,0 +1,121 @@
+<%-include("navbar.ejs")%>
+
+    <div class="container-fluid bg-white m-4 p-5">
+        <h1 style="text-transform: capitalize;">volunteers List</h1>
+        <div class="row my-4">
+           <h2 class="text-secondary mt-4">Pending Volunteers</h2>
+<table class="table table-bordered">
+<tr>
+    <th>Action</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Interest</th>
+    <th>Detail</th>
+</tr>
+
+<% pending_list.forEach(function(val){ %>
+<tr>
+    <td>
+        <a href="/admin/volunteer_accept/<%= val.vounteer_id %>" class="btn btn-success btn-sm">Accept</a>
+        <a href="/admin/volunteer_remove/<%= val.vounteer_id %>" class="btn btn-danger btn-sm">Reject</a>
+    </td>
+    <td><%= val.volunteer_name %></td>
+    <td><%= val.volunteer_mobile %></td>
+    <td><%= val.volunteer_email %></td>
+    <td><%= val.volunteer_intrest %></td>
+    <td><a href="/admin/volunteer_info/<%= val.vounteer_id %>">Details</a>
+</td>
+</tr>
+<% }) %>
+</table>
+
+        </div>
+        
+        <div class="row my-4">
+            <h2 class="text-success mt-5">Accepted Volunteers</h2>
+<table class="table table-bordered">
+<tr>
+    <th>Sr.No</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Interest</th>
+    <th>Detail</th>
+</tr>
+
+<% accepted_list.forEach(function(val,i){ %>
+<tr>
+    <td><%= i+1%></td>
+    <td><%= val.volunteer_name %></td>
+    <td><%= val.volunteer_mobile %></td>
+    <td><%= val.volunteer_email %></td>
+    <td><%= val.volunteer_intrest %></td>
+    <td><a href="/admin/volunteer_info/<%= val.vounteer_id %>">Details</a>
+</tr>
+<% }) %>
+</table>
+
+        </div>
+        
+        <div class="row my-4">
+            <h2 class="text-danger mt-5">Rejected Volunteers</h2>
+<table class="table table-bordered">
+<tr>
+    <th>Sr.No</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Interest</th>
+    <th>Detail</th>
+</tr>
+
+<% rejected_list.forEach(function(val,i){ %>
+<tr>
+    <td><%= i+1%></td>
+    <td><%= val.volunteer_name %></td>
+    <td><%= val.volunteer_mobile %></td>
+    <td><%= val.volunteer_email %></td>
+    <td><%= val.volunteer_intrest %></td>
+    <td><a href="/admin/volunteer_info/<%= val.vounteer_id %>">Details</a>
+</tr>
+<% }) %>
+</table>
+
+        </div>
+        
+        <div class="row my-4">
+            <h2 class="text-dark mt-5">Total Volunteers</h2>
+<table class="table table-bordered">
+<tr>
+     <th>Sr.No</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Interest</th>
+    <th>Status</th>
+</tr>
+
+<% total_list.forEach(function(val,i){ %>
+<tr>
+     <td><%= i+1%></td>
+    <td><%= val.volunteer_name %></td>
+    <td><%= val.volunteer_mobile %></td>
+    <td><%= val.volunteer_email %></td>
+    <td><%= val.volunteer_intrest %></td>
+    <td>
+    <span class="badge 
+            <%= val.status=='accepted'?'bg-success': val.status=='rejected'?'bg-danger':'bg-warning' %>">
+            <%= val.status %>
+        </span>
+    </td>
+</tr>
+<% }) %>
+</table>
+
+        </div>
+       
+   
+
+    </div>
+    <%-include("footer.ejs")%>

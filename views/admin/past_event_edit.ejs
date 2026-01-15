@@ -1,0 +1,61 @@
+<%- include("navbar.ejs") %>
+
+<div class="container my-5">
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <h4 class="text-danger mb-4">Edit Past Event</h4>
+
+          <form action="/admin/past_event_update/<%= event.program_id %>"
+      method="post"
+      enctype="multipart/form-data">
+
+                <input type="hidden" name="program_id" value="<%= event.program_id %>">
+                <input type="hidden" name="old_image" value="<%= event.program_image %>">
+
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input type="text"
+                           name="program_title"
+                           value="<%= event.program_title %>"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Date</label>
+                    <input type="date"
+                           name="program_date"
+                           value="<%= event.program_date %>"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Description</label>
+                    <textarea name="program_description"
+                              rows="4"
+                              class="form-control"><%= event.program_description %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label>Current Image</label><br>
+                    <% if(event.program_image){ %>
+                        <img src="/<%= event.program_image %>" width="120" class="rounded">
+                    <% } else { %>
+                        <span class="text-muted">No image</span>
+                    <% } %>
+                </div>
+
+                <div class="mb-3">
+                    <label>Change Image</label>
+                    <input type="file" name="program_image" class="form-control">
+                </div>
+
+                <button class="btn btn-danger">Update</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

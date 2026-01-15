@@ -1,0 +1,141 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-danger">Event List</h2>
+         </div>
+         <div class="d-flex justify-content-between align-items-center mb-4">
+         <h2>Upcoming Event</h2>
+        <a href="/admin/event" class="btn btn-danger">+ Add New Upcoming Event</a>
+        </div>
+   
+
+    <table class="table table-bordered table-hover align-middle">
+        <tr class="table-light">
+            <th>Image</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Venue</th>
+            <th>Capacity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        <% upcoming_event.forEach(function(val){ %>
+        <tr>
+            <td width="120">
+                <img src="../../<%= val.event_image %>"
+                     class="img-fluid rounded"
+                     style="height:70px; object-fit:cover;">
+            </td>
+
+            <td><%= val.event_title %></td>
+            <td>
+                <span class="badge bg-danger"><%= val.event_type %></span>
+            </td>
+            <td><%= val.event_date %></td>
+            <td><%= val.event_time %></td>
+            <td><%= val.event_venue %></td>
+            <td><%= val.event_capacity %></td>
+            <td>
+                <%= val.event_price %>
+            </td>
+            
+            <td>
+    <% if(val.event_status === 'open'){ %>
+        <span class="badge bg-success">Open</span>
+    <% } else if(val.event_status === 'coming_soon'){ %>
+        <span class="badge bg-warning text-dark">Coming Soon</span>
+    <% } else if(val.event_status === 'closed'){ %>
+        <span class="badge bg-secondary">Closed</span>
+    <% } else { %>
+        <span class="badge bg-danger">Cancelled</span>
+    <% } %>
+</td>
+
+
+            <td class="text-center">
+                <a href="/admin/upcoming_event_edit/<%= val.event_id %>"
+                   class="btn btn- btn-primary my-2"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                <a href="/admin/upcoming_event_delete/<%= val.event_id %>"
+                   onclick="return confirm('Are you sure?')"
+                   class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-arrow-up"></i></a>
+            </td>
+            
+            
+        </tr>
+        <% }) %>
+
+        <% if(upcoming_event.length === 0){ %>
+        <tr>
+            <td colspan="9" class="text-center text-muted">
+                No events found
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    
+    <hr>
+    
+    <div class="mt-5">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <h2>Past Events List</h2>
+        <a href="/admin/event" class="btn btn-danger">+ Add New Past Event</a>
+    </div>
+
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <% if(past_event.length > 0){ %>
+            <% past_event.forEach(function(val){ %>
+            <tr>
+                <td width="120">
+                    <img src="../../<%= val.program_image %>"
+                         class="img-fluid rounded"
+                         style="height:70px; object-fit:cover;">
+                </td>
+
+                <td><%= val.program_title %></td>
+
+                <td><%= val.program_date %></td>
+
+                <td style="max-width:300px">
+                    <%= val.program_description%>...
+                </td>
+
+                <td>
+                    <a href="/admin/past_event_edit/<%= val.program_id %>"
+                       class="btn btn-primary btn-sm">Edit</a>
+
+                    <a href="/admin/past_event_delete/<%= val.program_id %>"
+                       onclick="return confirm('Are you sure?')"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td colspan="5" class="text-center text-muted">
+                    No past events found
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

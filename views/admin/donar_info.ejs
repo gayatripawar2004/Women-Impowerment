@@ -1,0 +1,47 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <h2 class="mb-4 text-danger">Donor Details</h2>
+
+    <table class="table table-bordered">
+        <% donar.map(function(val){%>
+        <tr>
+            <th width="30%">Donor Name</th>
+            <td><%=val.donar_name %></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><%=val.donar_email %></td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td><%=val.donar_mobile %></td>
+        </tr>
+        <tr>
+            <th>Donation For</th>
+            <td><%=val.donation_for %></td>
+        </tr>
+        <tr>
+            <th>Donation Type</th>
+            <td><%=val.donation_type %></td>
+        </tr>
+        <tr>
+            <th>Donation Amount</th>
+            <td>₹ <%=val.prize %></td>
+        </tr>
+        <tr>
+            <th>Action</th>
+            <td>
+                <a class="btn btn-danger" href="/admin/delete/donar_info/<%= val.donar_id %>">Delete</a>
+                <a class="btn btn-success" href="/admin/update/donor_info/<%= val.donar_id%>">Edit</a>
+            </td>
+        </tr>
+       <% })%>
+    </table>
+
+    <a href="/admin/donation" class="btn btn-secondary mt-3">
+        ← Back to Donation List
+    </a>
+</div>
+
+<%- include("footer.ejs") %>

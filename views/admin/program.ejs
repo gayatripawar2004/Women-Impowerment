@@ -1,0 +1,68 @@
+<%- include("navbar.ejs") %>
+
+<div class="container my-5">
+    <div class="card shadow border-0">
+        <div class="card-body p-4">
+            <h4 class="mb-4 text-danger">Add New Program</h4>
+
+            <form action="/admin/save_program" method="post" enctype="multipart/form-data">
+
+                <!-- Program Category -->
+                <div class="mb-3">
+                    <label class="form-label">Program Category</label>
+                    <select name="program_category" class="form-select" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Education">Education</option>
+                        <option value="Skills">Skills</option>
+                        <option value="Health">Health</option>
+                    </select>
+                </div>
+
+                <!-- Program Title -->
+                <div class="mb-3">
+                    <label class="form-label">Program Title</label>
+                    <input type="text" name="program_title" class="form-control" placeholder="Enter program title" required>
+                </div>
+
+                <!-- Program Description -->
+                <div class="mb-3">
+                    <label class="form-label">Program Description</label>
+                    <textarea name="program_description" rows="4" class="form-control" placeholder="Enter program description"></textarea>
+                </div>
+
+                <!-- Program Features -->
+                <div class="mb-3">
+                    <label class="form-label">Program Features</label>
+                    <textarea name="program_features" rows="4" class="form-control"
+                        placeholder="Example:
+Scholarships for underprivileged girls
+Digital literacy workshops
+Career guidance sessions"></textarea>
+                    <small class="text-muted">Write one feature per line</small>
+                </div>
+
+                <!-- Beneficiaries -->
+                <div class="mb-3">
+                    <label class="form-label">Beneficiaries / Trained / Served</label>
+                    <input type="text" name="program_beneficiaries" class="form-control"
+                        placeholder="Example: 500+ Beneficiaries">
+                </div>
+
+                <!-- Program Image -->
+                <div class="mb-3">
+                    <label class="form-label">Program Image</label>
+                    <input type="file" name="program_image" class="form-control">
+                </div>
+
+                <!-- Buttons -->
+                <div class="text-end">
+                    <button type="submit" class="btn btn-danger px-4">Save Program</button>
+                    <a href="/admin/program_list" class="btn btn-secondary px-4">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

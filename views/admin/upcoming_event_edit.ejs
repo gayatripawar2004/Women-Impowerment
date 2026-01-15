@@ -1,0 +1,100 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <h2 class="text-danger mb-4">Edit Event</h2>
+
+    <form action="/admin/upcoming_event_edit/<%= upcoming_event[0].event_id %>" 
+          method="post" 
+          enctype="multipart/form-data">
+
+        <input type="hidden" name="old_image" value="<%= upcoming_event[0].event_image %>">
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Event Title</label>
+                <input type="text" name="event_title" 
+                       value="<%= upcoming_event[0].event_title %>" 
+                       class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Event Type</label>
+                <select name="event_type" class="form-control">
+                    <option value="Workshop" <%= upcoming_event[0].event_type=="Workshop"?"selected":"" %>>Workshop</option>
+                    <option value="Seminar" <%= upcoming_event[0].event_type=="Seminar"?"selected":"" %>>Seminar</option>
+                    <option value="Conference" <%= upcoming_event[0].event_type=="Conference"?"selected":"" %>>Conference</option>
+                </select>
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="event_description" class="form-control" rows="4"><%= upcoming_event[0].event_description %></textarea>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Event Date</label>
+                <input type="date" name="event_date" 
+                       value="<%= upcoming_event[0].event_date %>" 
+                       class="form-control">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Event Time</label>
+                <input type="text" name="event_time" 
+                       value="<%= upcoming_event[0].event_time %>" 
+                       class="form-control">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Capacity</label>
+                <input type="number" name="event_capacity" 
+                       value="<%= upcoming_event[0].event_capacity %>" 
+                       class="form-control">
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Venue</label>
+                <input type="text" name="event_venue" 
+                       value="<%= upcoming_event[0].event_venue %>" 
+                       class="form-control">
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Price</label>
+                <input type="text" name="event_price" 
+                       value="<%= upcoming_event[0].event_price %>" 
+                       class="form-control">
+            </div>
+             
+            <div class="col-md-6 mb-3">
+            <select name="event_status" class="form-select">
+    <option value="open" <%= upcoming_event.event_status=='open'?'selected':'' %>>Open</option>
+    <option value="coming_soon" <%= upcoming_event.event_status=='coming_soon'?'selected':'' %>>Coming Soon</option>
+    <option value="closed" <%= upcoming_event.event_status=='closed'?'selected':'' %>>Closed</option>
+    <option value="cancelled" <%= upcoming_event.event_status=='cancelled'?'selected':'' %>>Cancelled</option>
+</select>
+</div>
+
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Current Image</label><br>
+                <img src="../../<%= upcoming_event[0].event_image %>" 
+                     class="img-fluid rounded mb-2"
+                     style="height:120px">
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Change Image</label>
+                <input type="file" name="event_image" class="form-control">
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-danger">Update Event</button>
+        <a href="/admin/upcoming_event_list" class="btn btn-secondary ms-2">Cancel</a>
+
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

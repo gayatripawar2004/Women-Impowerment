@@ -1,0 +1,43 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <h2 class="text-danger mb-4">Volunteer Details</h2>
+
+    <table class="table table-bordered">
+        <!-- <% volunteer.map(function(val){%> -->
+        <tr>
+            <th>Volunteer Name</th>
+            <td><%= volunteer[0].volunteer_name %></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><%= volunteer[0].volunteer_email %></td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td><%= volunteer[0].volunteer_mobile %></td>
+        </tr>
+        <tr>
+            <th>Interest</th>
+            <td><%= volunteer[0].volunteer_intrest %></td>
+        </tr>
+        <tr>
+            <th>Availability</th>
+            <td><%= volunteer[0].volunteer_avalability %></td>
+        </tr>
+        <tr>
+            <th>Experience</th>
+            <td><%= volunteer[0].volunteer_experience %></td>
+        </tr>
+        <tr>
+            <th>Why Volunteer</th>
+            <td><%= volunteer[0].volunteer_why %></td>
+        </tr>
+       
+        <!-- <%  })%> -->
+    </table>
+
+    <a href="/admin/volunteer" class="btn btn-secondary mt-3">Back to List</a>
+</div>
+
+<%- include("footer.ejs") %>

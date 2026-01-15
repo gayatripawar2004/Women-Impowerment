@@ -1,0 +1,50 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <h2 class="text-danger mb-4">Edit Donor Information</h2>
+
+    <form method="post" action="/admin/update_donar/<%= donar[0].donar_id %>">
+        <input type="hidden" name="donar_id" value="<%=donar[0].donar_id %>">
+
+        <div class="mb-3">
+            <label class="form-label">Donor Name</label>
+            <input type="text" name="donar_name" value="<%=donar[0].donar_name %>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="donar_email" value="<%= donar[0].donar_email %>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input type="text" name="donar_mobile" value="<%= donar[0].donar_mobile %>" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Donation For</label>
+            <select name="donation_for" class="form-select">
+                <option value="education" <%= donar.donation_for=="education"?"selected":"" %>>Education</option>
+                <option value="health" <%= donar.donation_for=="health"?"selected":"" %>>Health</option>
+                <option value="skills" <%= donar.donation_for=="skills"?"selected":"" %>>Skills</option>
+            </select>
+        </div>
+
+          <div class="mb-3">
+            <label class="form-label">Donation Type</label>
+            <input type="text" class="form-control"
+                   name="donation_type"
+                   value="<%= donar[0].donation_type %>">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Donation Amount</label>
+            <input type="number" name="prize" value="<%=donar[0].prize %>" class="form-control">
+        </div>
+
+        <button class="btn btn-success">Update Donor</button>
+        <a href="/admin/donation" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

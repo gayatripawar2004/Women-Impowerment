@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cookie": "^1.1.1",
+    "cookies": "^0.9.1",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.16.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5"
+  },
+  "name": "women-impowerment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
