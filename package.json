@@ -1,0 +1,27 @@
+{
+  "name": "women-impowerment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gayatripawar2004/Women-Impowerment/issues"
+  },
+  "homepage": "https://github.com/gayatripawar2004/Women-Impowerment#readme",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

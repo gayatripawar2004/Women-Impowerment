@@ -1,0 +1,112 @@
+<%- include("navbar.ejs")%>
+
+       
+        <div class="row">
+           
+            
+            <div class="col-md-4">
+                <div class="stat-card" style="border-top: 4px solid #28a745;">
+                    <div class="position-relative">
+                        <i class="fas fa-donate stat-icon text-success"></i>
+                        <div class="stat-number text-success">₹<%= total_donation_amount %></div>
+                        <div class="stat-text">Total Donations</div>
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="stat-card" style="border-top: 4px solid #ffc107;">
+                    <div class="position-relative">
+                        <i class="fas fa-hands-helping stat-icon text-warning"></i>
+                        <div class="stat-number text-warning"><%= total_volunteers %></div>
+                        <div class="stat-text">Total Volunteers</div>
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="stat-card" style="border-top: 4px solid #dc3545;">
+                    <div class="position-relative">
+                        <i class="fas fa-calendar-alt stat-icon text-danger"></i>
+                        <div class="stat-number text-danger"><%= upcoming_events %></div>
+                        <div class="stat-text">Upcoming Events</div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Recent Activity Section -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <%
+function getIcon(type){
+    if(type === 'volunteer') return { icon:'fa-user-plus', color:'bg-primary' };
+    if(type === 'donation') return { icon:'fa-donate', color:'bg-success' };
+    if(type === 'event') return { icon:'fa-calendar-check', color:'bg-warning' };
+    if(type === 'message') return { icon:'fa-envelope', color:'bg-info' };
+}
+%>
+
+                <div class="card border-0 shadow-sm">
+             
+                </div><div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title mb-4">Recent Activity</h5>
+        <div class="list-group list-group-flush">
+
+            <% activities.forEach(function(act){ 
+                var ui = getIcon(act.type);
+            %>
+            <div class="list-group-item border-0 px-0 py-3">
+                <div class="d-flex align-items-center">
+                    <div class="<%= ui.color %> text-white rounded-circle p-2 me-3">
+                        <i class="fas <%= ui.icon %>"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="mb-0"><%= act.title %></h6>
+                        <small class="text-muted"><%= act.description %></small>
+                    </div>
+                    <small class="text-muted">
+                        <%= new Date(act.time).toLocaleDateString() %>
+                    </small>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+    </div>
+</div>
+
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Quick Actions</h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-danger" href="/admin/program">
+                                <i class="fas fa-plus me-2"></i>Add New Program
+                            </a>
+                            <a class="btn btn-outline-danger" href="/admin/event">
+                                <i class="fas fa-calendar-plus me-2"></i>Create Event
+                            </a>
+                            <a class="btn btn-outline-danger" href="/admin/volunteer">
+                                <i class="fas fa-user-plus me-2"></i>Volunteer List
+                            </a>
+                           
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+   <%- include("footer.ejs")%>    
+    
+    

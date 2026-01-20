@@ -1,0 +1,323 @@
+
+            <%- include("navbar.ejs") %>
+
+          
+           <section
+  class="hero-banner d-flex align-items-center justify-content-center text-center text-white"
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('/images/program banner.png');
+  "
+>
+            >
+            <div>
+    <p class="text-uppercase tracking">Our Initiatives & Projects</p>
+    <h1 class="hero-title">What We Are Doing</h1>
+    <p class="hero-text">
+      Creating opportunities that empower women to thrive through education, skills, and community support.
+    </p>
+   
+  </div>
+</section>
+
+            <!-- Middle Part - Programs Section -->
+            <section class="Middle-part py-5">
+                <div class="container">
+                    
+                    <!-- Introduction Section -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center">
+                            <p class="fs-4 text-danger fw-semibold">OUR PROGRAMS</p>
+                            <h1 class="about-title mb-4">
+                                Transforming Lives Through
+                                <span class="text-decoration-underline text-danger">Meaningful Initiatives</span>
+                            </h1>
+                            <p class="fs-5 mt-4 mx-auto" style="max-width: 800px;">
+                                At Sakhi Spark, we design programs that address the unique needs of women 
+                                across different stages of life. From education to entrepreneurship, 
+                                health to legal awareness—each initiative is crafted to build confidence, 
+                                create opportunities, and foster sustainable change.
+                            </p>
+                        </div>
+                    </div>
+
+                 
+                    <div class="row">
+                        <div class="col-12 text-center mb-5">
+                            <h2 class="fw-bold text-danger mb-3">Our Key Programs</h2>
+                            <p class="text-muted fs-5">
+                                Creating opportunities that empower women to thrive
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Programs Grid -->
+                    <div class="row g-4 mb-5">
+                        <!-- Program 1 -->
+                          <% program.map(function(val){%>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="//<%- val.program_image %>" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Education Support">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                        <i class="fas fa-graduation-cap me-2"></i><%= val.program_category %>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3"><%= val.program_title %></h5>
+                                    <p class="text-muted mb-4">
+                                       <%=val.program_description%>
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-4"> <%=val.program_features%></p>
+                                        <!-- <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Scholarships for underprivileged girls</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Digital literacy workshops</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>After-school tutoring programs</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Career guidance sessions</p> -->
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> <%= val.program_beneficiaries %>
+                                        </span>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <%})%>
+
+                        <!-- Program 2 -->
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Skill Development">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                        <i class="fas fa-tools me-2"></i>Skills
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Skill Development & Entrepreneurship</h5>
+                                    <p class="text-muted mb-4">
+                                        Vocational training and business development programs to create 
+                                        self-employed women entrepreneurs.
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Tailoring & handicraft training</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Computer and digital skills</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Micro-enterprise support</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Market linkage assistance</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> 300+ Trained
+                                        </span>
+                                        <a href="/program/skills" class="btn btn-outline-danger btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Program 3 -->
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Health & Wellness">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                        <i class="fas fa-heartbeat me-2"></i>Health
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Health & Wellness Initiative</h5>
+                                    <p class="text-muted mb-4">
+                                        Comprehensive healthcare programs focusing on physical, mental, 
+                                        and reproductive health for women.
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Regular health check-up camps</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Mental wellness workshops</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Nutrition awareness programs</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Maternal healthcare support</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> 1000+ Served
+                                        </span>
+                                        <a href="/program/health" class="btn btn-outline-danger btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Program 4 -->
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Legal Awareness">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                        <i class="fas fa-balance-scale me-2"></i>Legal
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Legal Awareness & Rights</h5>
+                                    <p class="text-muted mb-4">
+                                        Empowering women with knowledge about their legal rights and 
+                                        providing access to legal support.
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Know Your Rights workshops</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Free legal counseling</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Domestic violence support</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Property rights education</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> 750+ Assisted
+                                        </span>
+                                        <a href="/program/legal" class="btn btn-outline-danger btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Program 5 -->
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="/images/leadership.png" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Leadership">
+                                    <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                        <i class="fas fa-users me-2"></i>Leadership
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Women Leadership Program</h5>
+                                    <p class="text-muted mb-4">
+                                        Developing leadership skills and confidence in women to become 
+                                        community leaders and change-makers.
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Public speaking training</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Community leadership workshops</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Decision-making skills</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Networking opportunities</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> 200+ Leaders
+                                        </span>
+                                        <a href="/program/leadership" class="btn btn-outline-danger btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                   
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="position-relative">
+                                    <img src="/images/community.png" 
+                                         class="card-img-top" 
+                                         style="height: 250px; object-fit: cover;" 
+                                         alt="Community Support">
+                                   
+                                        <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-1 m-3 rounded">
+                                            <i class="fas fa-hands-helping me-2"></i>Community
+                                        </div>
+                                        
+                                    </div>
+                                
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Community Support Network</h5>
+                                    <p class="text-muted mb-4">
+                                        Creating support groups and community networks for women 
+                                        to share experiences and find solidarity.
+                                    </p>
+                                    <div class="program-features mb-4">
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Women support groups</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Counseling services</p>
+                                        <p class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Crisis intervention</p>
+                                        <p class="mb-0"><i class="fas fa-check-circle text-danger me-2"></i>Resource sharing platform</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-light text-dark p-2">
+                                            <i class="fas fa-users me-1"></i> 50+ Groups
+                                        </span>
+                                        <a href="/program/community" class="btn btn-outline-danger btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- Program Impact Statistics -->
+                    <div class="row my-5 py-5 bg-light rounded-3">
+                        <div class="col-12 text-center mb-4">
+                            <h2 class="fw-bold text-danger">Our Program Impact</h2>
+                            <p class="text-muted fs-5">Making a difference in numbers</p>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="display-4 fw-bold text-danger">500+</div>
+                            <p class="fs-5">Women Educated</p>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="display-4 fw-bold text-danger">300+</div>
+                            <p class="fs-5">Skills Trained</p>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="display-4 fw-bold text-danger">1000+</div>
+                            <p class="fs-5">Health Check-ups</p>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                            <div class="display-4 fw-bold text-danger">200+</div>
+                            <p class="fs-5">Leaders Developed</p>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="row mt-5">
+                        <div class="col-12 text-center">
+                            <div class="card border-danger shadow-sm">
+                                <div class="card-body py-5">
+                                    <h3 class="fw-bold text-danger mb-3">Want to Get Involved?</h3>
+                                    <p class="fs-5 mb-4">
+                                        Whether you want to join a program, volunteer, or support our initiatives, 
+                                        there are multiple ways to contribute to women empowerment.
+                                    </p>
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <a href="/volunteer" class="btn btn-danger px-4 fw-bold text-white">
+                                            <i class="fas fa-hands-helping me-2"></i>Volunteer With Us
+                                        </a>
+                                        <a href="/donate" class="btn btn-outline-danger px-4 fw-bold">
+                                            <i class="fas fa-donate me-2"></i>Support Our Programs
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <%- include("footer.ejs") %>
+       

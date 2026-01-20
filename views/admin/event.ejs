@@ -1,0 +1,126 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white m-4 p-5 rounded shadow-sm">
+    <h2 class="text-danger mb-4">Add New Event</h2>
+
+    <form method="post" action="/admin/save_upcoming_event" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label class="form-label">Event Title</label>
+            <input type="text" name="event_title" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Event Type</label>
+            <select name="event_type" class="form-select" required>
+                <option value="">Select Type</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Meetup</option>
+                <option>Conference</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Event Description</label>
+            <textarea name="event_description" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Event Date</label>
+                <input type="date" name="event_date" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Event Time</label>
+                <input type="text" name="event_time" class="form-control"
+                       placeholder="9:00 AM - 5:00 PM" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Venue</label>
+            <input type="text" name="event_venue" class="form-control" required>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Capacity</label>
+                <input type="number" name="event_capacity" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Price</label>
+                <input type="text" name="event_price" class="form-control">
+            </div>
+            
+            
+           <div class="mb-3">
+    <label class="form-label">Event Status</label>
+    <select name="event_status" class="form-select" required>
+        <option value="open">Open</option>
+        <option value="coming_soon">Coming Soon</option>
+        <option value="closed">Closed</option>
+        <option value="cancelled">Cancelled</option>
+    </select>
+</div>
+
+        
+        </div>
+        
+        
+
+        <div class="mb-4">
+            <label class="form-label">Event Image</label>
+            <input type="file" name="event_image" class="form-control">
+        </div>
+
+        <button class="btn btn-danger">Add Event</button>
+        <a href="/admin/upcoming_event_list" class="btn btn-secondary ms-2">Cancel</a>
+
+    </form>
+    
+    <hr>
+    
+     <div class="card shadow p-4 rounded-4 mt-5">
+        <h3 class="mb-4 text-danger">Add Past Event</h3>
+
+        <form action="/admin/save_past_event" method="POST" enctype="multipart/form-data">
+
+            <!-- Program Title -->
+            <div class="mb-3">
+                <label class="form-label">Program Title</label>
+                <input type="text" name="program_title" class="form-control" placeholder="Enter program title" required>
+            </div>
+
+            <!-- Program Date -->
+            <div class="mb-3">
+                <label class="form-label">Program Date</label>
+                <input type="date" name="program_date" class="form-control" required>
+            </div>
+
+            <!-- Program Description -->
+            <div class="mb-3">
+                <label class="form-label">Program Description</label>
+                <textarea name="program_description" class="form-control" rows="4" placeholder="Enter program details" required></textarea>
+            </div>
+
+            <!-- Program Image -->
+            <div class="mb-3">
+                <label class="form-label">Program Image</label>
+                <input type="file" name="program_image" class="form-control" accept="image/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-danger px-4">
+                    Add Event
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

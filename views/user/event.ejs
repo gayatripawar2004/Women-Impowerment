@@ -1,0 +1,657 @@
+
+            <%- include("navbar.ejs") %>
+
+            <section
+  class="hero-banner d-flex align-items-center justify-content-center text-center text-white"
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('/images/event background.png');
+  "
+>
+            
+            <div>
+    <p class="text-uppercase tracking">Community Gatherings & Workshops</p>
+    <h1 class="hero-title">Our Events</h1>
+    <p class="hero-text">
+ Join us for inspiring events, workshops, and campaigns that empower women 
+                        and create meaningful change in our communities.    </p>
+   
+  </div>
+</section>
+            
+
+            <!-- Middle Part - Events Section -->
+            <section class="Middle-part py-5">
+                <div class="container">
+                    
+                    <!-- Introduction Section -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center">
+                            <p class="fs-4 text-danger fw-semibold">COMMUNITY EVENTS & WORKSHOPS</p>
+                            <h1 class="about-title mb-4">
+                                Building Connections,
+                                <span class="text-decoration-underline text-danger">Creating Impact</span>
+                            </h1>
+                            <p class="fs-5 mt-4 mx-auto" style="max-width: 800px;">
+                                At Sakhi Spark, we organize various events throughout the year to educate, 
+                                inspire, and empower women. From skill-building workshops to awareness campaigns, 
+                                each event is designed to make a meaningful difference.
+                            </p>
+                        </div>
+                    </div>
+
+                  
+                    <div class="row mb-5" id="upcoming-events">
+                        <div class="col-12 text-center mb-5">
+                            <h2 class="fw-bold text-danger">Upcoming Events</h2>
+                            <p class="text-muted fs-5">Join our upcoming workshops and gatherings</p>
+                        </div>
+
+                        <% upcoming_event.map(function(val,i){%>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-lg h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-5">
+                                        <img src="//<%= val.event_image %>" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Women Entrepreneurship Summit">
+                                        <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 m-3 rounded">
+                                            <span class="fw-bold"><%= val.event_date %></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body p-4">
+                                            <span class="badge bg-danger mb-2"><%= val.event_type %></span>
+                                            <h4 class="fw-bold text-danger mb-3"><%= val.event_title %></h4>
+                                            <p class="text-muted mb-3">
+                                               <%= val.event_description %>
+                                            </p>
+                                            <div class="event-details mb-4">
+                                                <p class="mb-1"><i class="fas fa-calendar text-danger me-2"></i><strong>Date:</strong><%= val.event_date %></p>
+                                                <p class="mb-1"><i class="fas fa-clock text-danger me-2"></i><strong>Time:</strong><%= val.event_time %></p>
+                                                <p class="mb-1"><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Venue:</strong> <%= val.event_venue %></p>
+                                                <p class="mb-0"><i class="fas fa-users text-danger me-2"></i><strong>Capacity:</strong><%= val.event_capacity %> Participants</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="fas fa-rupee-sign me-1"></i><%= val.event_price %>
+                                                </span>
+                                                <a href="/event/register/1" class="btn btn-outline-danger btn-sm">Register Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <%})%>
+                     
+                     
+
+                        
+                        <!-- <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-lg h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-5">
+                                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Digital Literacy Workshop">
+                                        <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 m-3 rounded">
+                                            <span class="fw-bold">22 JAN</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body p-4">
+                                            <span class="badge bg-info mb-2">Training</span>
+                                            <h4 class="fw-bold text-danger mb-3">Digital Literacy Workshop Series</h4>
+                                            <p class="text-muted mb-3">
+                                                Learn essential digital skills including computer basics, 
+                                                internet safety, and online banking for women entrepreneurs.
+                                            </p>
+                                            <div class="event-details mb-4">
+                                                <p class="mb-1"><i class="fas fa-calendar text-danger me-2"></i><strong>Date:</strong> Janauary 22-24, 2026</p>
+                                                <p class="mb-1"><i class="fas fa-clock text-danger me-2"></i><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                                                <p class="mb-1"><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Venue:</strong> Sakhi Spark Digital Center</p>
+                                                <p class="mb-0"><i class="fas fa-users text-danger me-2"></i><strong>Capacity:</strong> 50 Participants</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="fas fa-rupee-sign me-1"></i>₹500 Registration
+                                                </span>
+                                                <a href="/event/register/2" class="btn btn-outline-danger btn-sm">Register Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                       
+                        <!-- <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-lg h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-5">
+                                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Health Awareness Camp">
+                                        <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 m-3 rounded">
+                                            <span class="fw-bold">10 JAN</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body p-4">
+                                            <span class="badge bg-warning mb-2">Health Camp</span>
+                                            <h4 class="fw-bold text-danger mb-3">Women's Health Awareness Camp</h4>
+                                            <p class="text-muted mb-3">
+                                                Free health check-ups, nutrition counseling, and mental wellness 
+                                                sessions for women from underserved communities.
+                                            </p>
+                                            <div class="event-details mb-4">
+                                                <p class="mb-1"><i class="fas fa-calendar text-danger me-2"></i><strong>Date:</strong> January 10, 2027</p>
+                                                <p class="mb-1"><i class="fas fa-clock text-danger me-2"></i><strong>Time:</strong> 8:00 AM - 6:00 PM</p>
+                                                <p class="mb-1"><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Venue:</strong> Community Health Center, Navi Mumbai</p>
+                                                <p class="mb-0"><i class="fas fa-users text-danger me-2"></i><strong>Capacity:</strong> Open to All</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="fas fa-rupee-sign me-1"></i>Free Service
+                                                </span>
+                                                <a href="/event/register/3" class="btn btn-outline-danger btn-sm">Volunteer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                      
+                        <!-- <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-lg h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-5">
+                                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Legal Rights Workshop">
+                                        <div class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 m-3 rounded">
+                                            <span class="fw-bold">25 JAN</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body p-4">
+                                            <span class="badge bg-success mb-2">Awareness</span>
+                                            <h4 class="fw-bold text-danger mb-3">Legal Rights Awareness Workshop</h4>
+                                            <p class="text-muted mb-3">
+                                                Understanding women's legal rights, domestic violence laws, 
+                                                property rights, and legal recourse available.
+                                            </p>
+                                            <div class="event-details mb-4">
+                                                <p class="mb-1"><i class="fas fa-calendar text-danger me-2"></i><strong>Date:</strong> Feb 25, 2026</p>
+                                                <p class="mb-1"><i class="fas fa-clock text-danger me-2"></i><strong>Time:</strong> 2:00 PM - 6:00 PM</p>
+                                                <p class="mb-1"><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Venue:</strong> Sakhi Spark Community Hall</p>
+                                                <p class="mb-0"><i class="fas fa-users text-danger me-2"></i><strong>Capacity:</strong> 100 Participants</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="fas fa-rupee-sign me-1"></i>Free Entry
+                                                </span>
+                                                <a href="/event/register/4" class="btn btn-outline-danger btn-sm">Register Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                    
+                       
+                    <!-- Event Calendar -->
+                    <div class="row mb-5 py-5 bg-light rounded-3">
+                        <div class="col-12 text-center mb-4">
+                            <h2 class="fw-bold text-danger">Event Calendar 2026-27</h2>
+                            <p class="text-muted fs-5">Mark your calendars for important dates</p>
+                        </div>
+                        
+                       
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="table-danger">
+                                        
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Event</th>
+                                            <th>Type</th>
+                                            <th>Location</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% upcoming_event.map(function(val,i){%>
+                                        <tr>
+                                            <td><%= val.event_date %></td>
+                                            <td><%= val.event_title %></td>
+                                            <td><span class="badge bg-danger"><%= val.event_type %></span></td>
+                                            <td> <%= val.event_venue %></td>
+                                            <td><span class="badge bg-success"><%= val.event_status%></span></td>
+                                           <td><button class="btn btn-sm btn-outline-danger" onclick="confirmTicket(this)">Book Tickets</button>
+
+</td>
+
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>Dec 15, 2024</td>
+                                            <td>Entrepreneurship Summit</td>
+                                            <td><span class="badge bg-warning">Workshop</span></td>
+                                            <td>Mumbai Convention Center</td>
+                                            <td><span class="badge bg-success">Open</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-danger">Register</a></td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td>Dec 22-24, 2024</td>
+                                            <td>Digital Literacy Workshop</td>
+                                            <td><span class="badge bg-info">Training</span></td>
+                                            <td>Sakhi Spark Digital Center</td>
+                                            <td><span class="badge bg-success">Open</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-danger">Register</a></td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td>Jan 10, 2025</td>
+                                            <td>Women's Health Camp</td>
+                                            <td><span class="badge bg-primary">Health</span></td>
+                                            <td>Community Health Center</td>
+                                            <td><span class="badge bg-success">Open</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-danger">Volunteer</a></td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td>Jan 25, 2025</td>
+                                            <td>Legal Rights Workshop</td>
+                                            <td><span class="badge bg-success">Awareness</span></td>
+                                            <td>Sakhi Spark Community Hall</td>
+                                            <td><span class="badge bg-success">Open</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-danger">Register</a></td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td>Mar 8, 2025</td>
+                                            <td>International Women's Day Celebration</td>
+                                            <td><span class="badge bg-dark">Celebration</span></td>
+                                            <td>Azad Maidan, Mumbai</td>
+                                            <td><span class="badge bg-warning">Coming Soon</span></td>
+                                            <td><button class="btn btn-sm btn-outline-secondary" disabled>Notify Me</button></td>
+                                        </tr> -->
+                                       <%})%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                      
+
+                    <!-- Past Events Gallery -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center mb-5">
+                            <h2 class="fw-bold text-danger">Past Events Gallery</h2>
+                            <p class="text-muted fs-5">Memories from our successful events</p>
+                        </div>
+
+                      <% past_event.map(function(val){%>
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="//<%= val.program_image %>" 
+                                     class="card-img-top" 
+                                     style="height: 250px; object-fit: cover;"
+                                     alt="Career Guidance Workshop">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger"><%= val.program_title %></h5>
+                                    <p class="text-muted small"><%= val.program_date %></p>
+                                    <p class="text-muted">
+                                        <%= val.program_description%>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <%})%>
+
+                        <!-- <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="/images/Women's Day Marathon 2024.png" 
+                                     class="card-img-top" 
+                                     style="height: 250px; object-fit: cover;"
+                                     alt="Women's Day Marathon">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger">Women's Day Marathon 2025</h5>
+                                    <p class="text-muted small">March 8, 2025</p>
+                                    <p class="text-muted">
+                                        Over 500 participants joined our 5K run for women empowerment awareness.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="/images/Skill Training Graduation.png" 
+                                     class="card-img-top" 
+                                     style="height: 250px; object-fit: cover;"
+                                     alt="Skill Training Graduation">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger">Skill Training Graduation</h5>
+                                    <p class="text-muted small">October 2025</p>
+                                    <p class="text-muted">
+                                        Certificate distribution ceremony for 75 women who completed vocational training.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="/images/Domestic Violence Awareness Rally.png" 
+                                     class="card-img-top" 
+                                     style="height: 250px; object-fit: cover;"
+                                     alt="Awareness Rally">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger">Domestic Violence Awareness Rally</h5>
+                                    <p class="text-muted small">September 2025</p>
+                                    <p class="text-muted">
+                                        Community rally to raise awareness about domestic violence prevention.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="/images/Women Artists Exhibition.png" 
+                                     class="card-img-top" 
+                                     style="height: 250px; object-fit: cover;"
+                                     alt="Art Exhibition">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger">Women Artists Exhibition</h5>
+                                    <p class="text-muted small">August 2025</p>
+                                    <p class="text-muted">
+                                        Showcasing artwork by 25 women artists from marginalized communities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <img src="/images/Women Writers Book Launch.png" 
+                                     class="card-img-top" 
+                                     style="height:250px; object-fit: cover;"
+                                     alt="Book Launch">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-danger">Women Writers Book Launch</h5>
+                                    <p class="text-muted small">July 2025</p>
+                                    <p class="text-muted">
+                                        Launch event for books written by women from our writing workshop.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- News Coverage Section -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center mb-5">
+                            <h2 class="fw-bold text-danger">Media Coverage</h2>
+                            <p class="text-muted fs-5">Our events featured in leading publications</p>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4">
+                                        <img src="/images/Times of India article.png" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Times of India Article">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="fw-bold text-danger">Times of India</h5>
+                                            <p class="text-muted small">October 15, 2025</p>
+                                            <p class="text-muted">
+                                                "Sakhi Spark's entrepreneurship summit empowers 200 women 
+                                                with business skills and mentorship opportunities."
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold text-decoration-none">
+                                                Read Full Article →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4">
+                                        <img src="/images/The Hindu article.png" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="The Hindu Article">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="fw-bold text-danger">The Hindu</h5>
+                                            <p class="text-muted small">September 22, 2025</p>
+                                            <p class="text-muted">
+                                                "Digital literacy workshop bridges the technology gap for 
+                                                women in urban slums, creating new opportunities."
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold text-decoration-none">
+                                                Read Full Article →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4">
+                                        <img src="/images/Indian Express article.png" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Indian Express Article">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="fw-bold text-danger">Indian Express</h5>
+                                            <p class="text-muted small">August 5, 2025</p>
+                                            <p class="text-muted">
+                                                "Health awareness camp provides free screenings and 
+                                                medical consultations to 500+ women in Mumbai."
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold text-decoration-none">
+                                                Read Full Article →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4">
+                                        <img src="/images/Mumbai Mirror article.png" 
+                                             class="img-fluid rounded-start h-100 w-100" 
+                                             style="object-fit: cover;"
+                                             alt="Mumbai Mirror Article">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="fw-bold text-danger">Mumbai Mirror</h5>
+                                            <p class="text-muted small">July 18, 2025</p>
+                                            <p class="text-muted">
+                                                "Annual fundraising gala raises ₹25 lakhs for women 
+                                                empowerment programs across Maharashtra."
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold text-decoration-none">
+                                                Read Full Article →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Registration Form -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="card shadow-lg border-0">
+                                <div class="card-body p-5">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4 mb-lg-0">
+                                            <h2 class="fw-bold text-danger mb-4">Get Event Updates</h2>
+                                            <p class="fs-5 mb-4">
+                                                Subscribe to our newsletter to receive updates about upcoming events, 
+                                                workshops, and community gatherings.
+                                            </p>
+                                            <div class="event-benefits">
+                                                <h5 class="fw-bold mb-3">Benefits of subscribing:</h5>
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="fas fa-bell text-danger me-2"></i>Early bird registration</li>
+                                                    <li class="mb-2"><i class="fas fa-calendar-check text-danger me-2"></i>Event reminders</li>
+                                                    <li class="mb-2"><i class="fas fa-ticket-alt text-danger me-2"></i>Free workshop invitations</li>
+                                                    <li class="mb-2"><i class="fas fa-users text-danger me-2"></i>Networking opportunities</li>
+                                                    <li><i class="fas fa-gift text-danger me-2"></i>Special offers for subscribers</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6">
+                                            <h3 class="fw-bold text-danger mb-4">Subscribe to Event Updates</h3>
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="eventName" class="form-label">Full Name *</label>
+                                                    <input type="text" class="form-control" id="eventName" required>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label for="eventEmail" class="form-label">Email Address *</label>
+                                                    <input type="email" class="form-control" id="eventEmail" required>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label for="eventPhone" class="form-label">Phone Number</label>
+                                                    <input type="tel" class="form-control" id="eventPhone">
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label for="eventInterest" class="form-label">Event Interests *</label>
+                                                    <select class="form-select" id="eventInterest" required multiple>
+                                                        <option value="workshops">Workshops</option>
+                                                        <option value="health-camps">Health Camps</option>
+                                                        <option value="awareness-rallies">Awareness Rallies</option>
+                                                        <option value="fundraisers">Fundraising Events</option>
+                                                        <option value="trainings">Skill Trainings</option>
+                                                        <option value="celebrations">Celebrations</option>
+                                                    </select>
+                                                    <small class="text-muted">Hold Ctrl (or Cmd on Mac) to select multiple options</small>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="volunteerInterest">
+                                                        <label class="form-check-label" for="volunteerInterest">
+                                                            I'm interested in volunteering for events
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="d-grid">
+                                                    <button type="submit" class="btn btn-danger btn-lg fw-bold">
+                                                        <i class="fas fa-envelope me-2"></i>Subscribe Now
+                                                    </button>
+                                                </div>
+                                                
+                                                <p class="text-muted small mt-3">
+                                                    We respect your privacy. You can unsubscribe at any time.
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partnership Section -->
+                    <div class="row">
+                        <div class="col-12 text-center mb-4">
+                            <h2 class="fw-bold text-danger">Event Partners & Sponsors</h2>
+                            <p class="text-muted fs-5">Collaborating for greater impact</p>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="bg-light p-4 rounded">
+                                <div class="row align-items-center">
+                                    <div class="col-md-3 col-6 text-center mb-3">
+                                        <div class="bg-white p-3 rounded shadow-sm">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtqJSVai6WP7wva8qwM_hENzIJEbyqys9A0Q&s" 
+                                                 height="40" 
+                                                 alt="TCS">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 text-center mb-3">
+                                        <div class="bg-white p-3 rounded shadow-sm">
+                                            <img src="https://i.pinimg.com/736x/a0/87/3e/a0873e95308b5ad38d98ac08bb55fe47.jpg" 
+                                                 height="40" 
+                                                 alt="Airtel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 text-center mb-3">
+                                        <div class="bg-white p-3 rounded shadow-sm">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" 
+                                                 height="40" 
+                                                 alt="Google">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 text-center mb-3">
+                                        <div class="bg-white p-3 rounded shadow-sm">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPiQARLn9IY-nzbl9wU0-IHn6_lcfZvCa76w&s" 
+                                                 height="40" 
+                                                 alt="HDFC Bank">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </section>
+            <script>
+             
+function confirmTicket(btn) {
+    if (confirm("Do you want to confirm this ticket booking?")) {
+        btn.innerText = "Booked";
+        btn.classList.remove("btn-outline-danger");
+        btn.classList.add("btn-secondary");
+        btn.disabled = true;
+    }
+}
+</script>
+
+           
+
+            <%- include("footer.ejs") %>
+       

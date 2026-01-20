@@ -1,0 +1,72 @@
+<%- include("navbar.ejs") %>
+
+    <div class="container my-5">
+        <div class="card shadow border-0">
+            <div class="card-body">
+
+                <h4 class="text-danger mb-4">Edit Program</h4>
+
+                <form action="/admin/update_program" method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" name="program_id" value="<%= program.program_id %>">
+                    <input type="hidden" name="old_image" value="<%= program.program_image %>">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Program Category</label>
+                            <input type="text" name="program_category" value="<%= program.program_category %>"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Program Title</label>
+                            <input type="text" name="program_title" value="<%= program.program_title %>"
+                                class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Description</label>
+                        <textarea name="program_description" rows="4"
+                            class="form-control"><%= program.program_description %></textarea>
+                    </div>
+                    
+                     <div class="mb-3">
+                        <label>Features</label>
+                    <textarea name="program_features" rows="4" class="form-control"><%=
+                     program.program_features
+                      ? program.program_features.split(', ').join('\n')
+                     : ''
+                    %></textarea>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label>Beneficiaries</label>
+                        <input type="text" name="program_beneficiaries" value="<%= program.program_beneficiaries %>"
+                            class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Current Image</label><br>
+                        <img src="/<%= program.program_image %>" width="120" class="rounded mb-2">
+                    </div>
+
+                    <div class="mb-4">
+                        <label>Change Image</label>
+                        <input type="file" name="program_image" class="form-control">
+                    </div>
+
+                    <div class="text-end">
+                        <a href="/admin/program_list" class="btn btn-secondary">Cancel</a>
+                        <button class="btn btn-danger">Update Program</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include("footer.ejs") %>

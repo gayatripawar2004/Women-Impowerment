@@ -1,0 +1,578 @@
+
+            <%- include("navbar.ejs") %>
+
+            <!-- Banner Section -->
+           <section
+  class="hero-banner d-flex align-items-center justify-content-center text-center text-white"
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('/images/contact background.png');
+  "
+>
+ <div>
+    <p class="text-uppercase tracking">Get In Touch With Us</p>
+    <h1 class="hero-title">Contact Sakhi Spark</h1>
+    <p class="hero-text">
+       We're here to listen, help, and connect. Reach out to us for inquiries, 
+                        partnerships, volunteering, or any support you need.
+    </p>
+   
+  </div>
+</section>
+
+
+            <!-- Middle Part - Contact Section -->
+            <section class="Middle-part py-5">
+                <div class="container">
+                    
+                    <!-- Introduction Section -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center">
+                            <p class="fs-4 text-danger fw-semibold">CONNECT WITH US</p>
+                            <h1 class="about-title mb-4">
+                                We're Here to
+                                <span class="text-decoration-underline text-danger">Help & Support</span>
+                            </h1>
+                            <p class="fs-5 mt-4 mx-auto" style="max-width: 800px;">
+                                Whether you have questions about our programs, want to volunteer, 
+                                need assistance, or wish to partner with us, our team is ready to 
+                                assist you. Reach out through any of the channels below.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Cards -->
+                    <div class="row mb-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                                <div class="icon-wrapper bg-danger text-white rounded-circle mx-auto mb-4" 
+                                     style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold text-danger mb-3">Visit Our Office</h4>
+                                <p class="text-muted mb-3">
+                                    Sakhi Spark Headquarters<br>
+                                    123 Women Empowerment Street<br>
+                                    Bandra West, Mumbai<br>
+                                    Maharashtra 400050
+                                </p>
+                                <div class="mt-3">
+                                    <a href="#map" class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-directions me-1"></i>Get Directions
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                                <div class="icon-wrapper bg-danger text-white rounded-circle mx-auto mb-4" 
+                                     style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-phone-alt fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold text-danger mb-3">Call Us</h4>
+                                <p class="text-muted mb-3">
+                                    <strong>General Inquiries:</strong><br>
+                                    +91 22 1234 5678
+                                </p>
+                                <p class="text-muted mb-3">
+                                    <strong>Helpline (24/7):</strong><br>
+                                    1800-123-4567
+                                </p>
+                                <p class="text-muted">
+                                    <strong>Emergency Support:</strong><br>
+                                    +91 98765 43210
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                                <div class="icon-wrapper bg-danger text-white rounded-circle mx-auto mb-4" 
+                                     style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold text-danger mb-3">Email Us</h4>
+                                <p class="text-muted mb-3">
+                                    <strong>General Inquiries:</strong><br>
+                                    info@sakhispark.org
+                                </p>
+                                <p class="text-muted mb-3">
+                                    <strong>Volunteering:</strong><br>
+                                    volunteer@sakhispark.org
+                                </p>
+                                <p class="text-muted mb-3">
+                                    <strong>Donations:</strong><br>
+                                    donate@sakhispark.org
+                                </p>
+                                <p class="text-muted">
+                                    <strong>Partnerships:</strong><br>
+                                    partnerships@sakhispark.org
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form and Map Section -->
+                    <div class="row mb-5">
+                        <!-- Contact Form -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-lg h-100">
+                                <div class="card-body p-5">
+                                    <h2 class="fw-bold text-danger mb-4">Send Us a Message</h2>
+                                    <p class="text-muted mb-4">
+                                        Fill out the form below and we'll get back to you within 24 hours.
+                                    </p>
+                                    
+                                    <form action="/save_contact" method="post">
+                                        <div class="row mb-3">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="contactFirstName" class="form-label">Name *</label>
+                                                <input type="text" class="form-control" name="name" id="contactFirstName" required>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="contactEmail" class="form-label">Email Address *</label>
+                                                <input type="email" class="form-control" name="email" id="contactEmail" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="contactPhone" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" name="mobile" id="contactPhone">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="contactSubject" class="form-label">Subject *</label>
+                                            <select class="form-select" id="contactSubject" name="subject" required>
+                                                <option value="" selected disabled>Select a subject</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="volunteer">Volunteering Opportunity</option>
+                                                <option value="donation">Donation Related</option>
+                                                <option value="partnership">Partnership/Corporate</option>
+                                                <option value="program">Program Information</option>
+                                                <option value="support">Need Support/Help</option>
+                                                <option value="media">Media Inquiry</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="contactMessage" class="form-label">Your Message *</label>
+                                            <textarea class="form-control" id="contactMessage" rows="5" name="message" required 
+                                                      placeholder="Please provide details about your inquiry..."></textarea>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                                                <label class="form-check-label" for="newsletter">
+                                                    Subscribe to our newsletter for updates and events
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-danger btn-lg fw-bold">
+                                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                                            </button>
+                                        </div>
+                                        
+                                        <p class="text-muted small mt-3">
+                                            * Required fields. We respect your privacy and will not share your information.
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map and Office Hours -->
+                        <div class="col-lg-6 mb-4">
+                            <!-- Map Container -->
+                            <div class="card border-0 shadow-lg mb-4">
+                                <div class="card-body p-0">
+                                    <h4 class="fw-bold text-danger p-4 mb-0">Our Location</h4>
+                                    <div id="map" style="height: 300px; border-bottom: 1px solid #dee2e6;">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.052134329185!2d74.72775317520612!3d19.105368682105276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcb17ca9d749e5%3A0x516744f9b2f35ec9!2sA2Z%20IT%20HUB%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1768111911114!5m2!1sen!2sin"
+                                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                                            <strong>Address:</strong>
+                                            <span class="ms-2">Balikashram Rd, Bagade Mala, Ahilyanagar, Maharashtra 414003</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-subway text-danger me-2"></i>
+                                            <strong>Nearest Station:</strong>
+                                            <span class="ms-2">Ahlyanagar Railway Station (10 min walk)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Office Hours -->
+                            <div class="card border-0 shadow-lg">
+                                <div class="card-body p-4">
+                                    <h4 class="fw-bold text-danger mb-4">Office Hours</h4>
+                                    <div class="office-hours">
+                                        <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                            <span>Monday - Friday</span>
+                                            <span class="fw-bold">9:00 AM - 6:00 PM</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                            <span>Saturday</span>
+                                            <span class="fw-bold">09:00 AM - 1:00 PM</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between pb-2 mb-2">
+                                            <span>Sunday</span>
+                                            <span class="fw-bold">Closed</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between border-top pt-3">
+                                            <span><i class="fas fa-exclamation-circle text-danger me-1"></i>Helpline</span>
+                                            <span class="fw-bold">24/7 Available</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <h5 class="fw-bold mb-3">Before Visiting:</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-1"><i class="fas fa-check-circle text-danger me-2"></i>Appointments recommended</li>
+                                            <li class="mb-1"><i class="fas fa-check-circle text-danger me-2"></i>Free parking available</li>
+                                            <li class="mb-1"><i class="fas fa-check-circle text-danger me-2"></i>Wheelchair accessible</li>
+                                            <li><i class="fas fa-check-circle text-danger me-2"></i>Interpreter services available</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Centers -->
+                    <div class="row mb-5">
+                        <div class="col-12 text-center mb-5">
+                            <h2 class="fw-bold text-danger">Our Regional Centers</h2>
+                            <p class="text-muted fs-5">Connect with us across different locations</p>
+                        </div>
+                        
+                        <div class="col-md-3"></div>
+ 
+                   
+                  
+
+                        <div class="col-md-6 mb-4 text-center">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger mb-3">Ahilyanagar Center</h5>
+                                    <p class="text-muted mb-3">
+                                       Balikashram Rd, Bagade Mala, Ahilyanagar,<br> Maharashtra 414003
+                                    </p>
+                                    <p class="mb-2"><i class="fas fa-phone text-danger me-2"></i>+91 9011144902</p>
+                                    <p class="mb-2"><i class="fas fa-envelope text-danger me-2"></i>Ahilyanagar@sakhispark.org</p>
+                                    <p class="mb-0"><i class="fas fa-clock text-danger me-2"></i>Mon-Fri: 9:30AM-5:30PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3"></div>
+
+               
+                     
+
+         
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-lg">
+                                <div class="card-body p-5">
+                                    <div class="text-center mb-5">
+                                        <h2 class="fw-bold text-danger">Frequently Asked Questions</h2>
+                                        <p class="text-muted fs-5">Common questions about contacting us</p>
+                                    </div>
+                                    
+                                    <div class="accordion" id="contactFAQ">
+                                        <div class="accordion-item border-0 shadow-sm mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                                    What is the best way to reach Sakhi Spark for urgent help?
+                                                </button>
+                                            </h2>
+                                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                                <div class="accordion-body">
+                                                    For urgent assistance, please call our 24/7 helpline at 1800-123-4567. 
+                                                    For emergencies, you can also call our emergency support number at +91 98765 43210. 
+                                                    These lines are staffed around the clock to provide immediate support.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item border-0 shadow-sm mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                                    How long does it take to get a response to my email?
+                                                </button>
+                                            </h2>
+                                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                                <div class="accordion-body">
+                                                    We strive to respond to all emails within 24 hours on business days. 
+                                                    For urgent matters, please call our helpline. Emails received on weekends 
+                                                    or holidays will be responded to on the next business day.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item border-0 shadow-sm mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                                    Do I need an appointment to visit your office?
+                                                </button>
+                                            </h2>
+                                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                                <div class="accordion-body">
+                                                    While walk-ins are welcome during office hours, we recommend scheduling 
+                                                    an appointment to ensure that the appropriate staff member is available 
+                                                    to assist you. You can schedule an appointment by calling our office 
+                                                    or through the contact form on this page.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item border-0 shadow-sm mb-3">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                                    Can I volunteer at multiple regional centers?
+                                                </button>
+                                            </h2>
+                                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                                <div class="accordion-body">
+                                                    Yes, you can volunteer at multiple centers depending on the programs 
+                                                    and your availability. Please contact the specific regional center 
+                                                    you're interested in, or email volunteer@sakhispark.org for 
+                                                    multi-center volunteering opportunities.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item border-0 shadow-sm">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                                    How can corporations partner with Sakhi Spark?
+                                                </button>
+                                            </h2>
+                                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                                <div class="accordion-body">
+                                                    We welcome corporate partnerships for CSR initiatives, employee 
+                                                    volunteering programs, and sponsorships. Please email 
+                                                    partnerships@sakhispark.org or use the contact form selecting 
+                                                    "Partnership/Corporate" as the subject. Our partnership team 
+                                                    will contact you within 2 business days to discuss opportunities.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media & Newsletter -->
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 text-center">
+                                    <h4 class="fw-bold text-danger mb-4">Follow Us on Social Media</h4>
+                                    <p class="text-muted mb-4">
+                                        Stay updated with our latest news, events, and success stories.
+                                    </p>
+                                    <div class="social-icons d-flex justify-content-center gap-4">
+                                        <a href="https://facebook.com/sakhispark" class="text-danger fs-1" target="_blank">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                        <a href="https://twitter.com/sakhispark" class="text-danger fs-1" target="_blank">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="https://instagram.com/sakhispark" class="text-danger fs-1" target="_blank">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/company/sakhispark" class="text-danger fs-1" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                        <a href="https://youtube.com/sakhispark" class="text-danger fs-1" target="_blank">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </div>
+                                    <p class="mt-4 text-muted">
+                                        #SakhiSpark #WomenEmpowerment #TogetherWeRise
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 text-center">
+                                    <h4 class="fw-bold text-danger mb-4">Subscribe to Our Newsletter</h4>
+                                    <p class="text-muted mb-4">
+                                        Get monthly updates about our programs, events, and impact stories.
+                                    </p>
+                                    <form class="newsletter-form">
+                                        <div class="input-group mb-3">
+                                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                                            <button class="btn btn-danger" type="submit">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-check text-start">
+                                            <input class="form-check-input" type="checkbox" id="privacyConsent" checked required>
+                                            <label class="form-check-label small text-muted" for="privacyConsent">
+                                                I agree to receive emails from Sakhi Spark and accept the 
+                                                <a href="#" class="text-danger">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </form>
+                                    <p class="small text-muted mt-4 mb-0">
+                                        We send 1-2 emails per month. Unsubscribe anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <%- include("footer.ejs") %>
+
+            <script>
+                // Initialize Map
+                function initMap() {
+                    // Coordinates for Mumbai (Bandra West)
+                    var mumbaiCoords = [19.0596, 72.8295];
+                    
+                    // Create map
+                    var map = L.map('map').setView(mumbaiCoords, 15);
+                    
+                    // Add tile layer (OpenStreetMap)
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+                    
+                    // Add custom marker
+                    var customIcon = L.divIcon({
+                        className: 'custom-marker',
+                        html: '<i class="fas fa-map-marker-alt fa-2x text-danger"></i>',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 30]
+                    });
+                    
+                    // Add marker
+                    L.marker(mumbaiCoords, {icon: customIcon}).addTo(map)
+                        .bindPopup('<b>Sakhi Spark Headquarters</b><br>123 Women Empowerment Street, Bandra West, Mumbai')
+                        .openPopup();
+                    
+                    // Add circle for emphasis
+                    L.circle(mumbaiCoords, {
+                        color: '#dc3545',
+                        fillColor: '#dc3545',
+                        fillOpacity: 0.1,
+                        radius: 100
+                    }).addTo(map);
+                }
+                
+                // Initialize map when page loads
+                document.addEventListener('DOMContentLoaded', function() {
+                    initMap();
+                    
+                    
+                        // Basic validation
+                        const firstName = document.getElementById('contactFirstName').value;
+                        const email = document.getElementById('contactEmail').value;
+                        
+                        if (!firstName || !email) {
+                            alert('Please fill in all required fields.');
+                            return;
+                        }
+                        
+                        // In a real implementation, this would send data to server
+                        alert('Thank you for your message! We will get back to you within 24 hours.');
+                        
+                        // Reset form
+                        this.reset();
+                    });
+                    
+                    // Newsletter form submission
+                    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const email = this.querySelector('input[type="email"]').value;
+                        
+                        if (email) {
+                            alert('Thank you for subscribing to our newsletter!');
+                            this.reset();
+                        }
+                    });
+                    
+                    // Add smooth scrolling for Get Directions button
+                    document.querySelector('a[href="#map"]').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.getElementById('map').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                
+            </script>
+            
+            <style>
+                /* Custom marker style */
+                .custom-marker {
+                    background: none;
+                    border: none;
+                }
+                
+                /* Map container styling */
+                #map {
+                    border-radius: 8px;
+                }
+                
+                /* Social media icons hover effect */
+                .social-icons a {
+                    transition: transform 0.3s ease;
+                }
+                
+                .social-icons a:hover {
+                    transform: translateY(-5px);
+                }
+                
+                /* Form input focus styling */
+                .form-control:focus {
+                    border-color: #dc3545;
+                    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+                }
+                
+                /* Accordion styling */
+                .accordion-button:not(.collapsed) {
+                    background-color: rgba(220, 53, 69, 0.1);
+                    color: #dc3545;
+                }
+                
+                .accordion-button:focus {
+                    border-color: #dc3545;
+                    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+                }
+                
+                /* Office hours styling */
+                .office-hours div {
+                    transition: background-color 0.3s ease;
+                }
+                
+                .office-hours div:hover {
+                    background-color: rgba(220, 53, 69, 0.05);
+                }
+            </style>
+        </main>
+    </body>
+</html>

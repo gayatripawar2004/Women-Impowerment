@@ -1,0 +1,249 @@
+<%- include("navbar.ejs") %>
+
+
+<section
+  class="hero-banner d-flex align-items-center justify-content-center text-center text-white"
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://www.shutterstock.com/image-vector/group-silhouette-multicultural-women-international-260nw-2414777461.jpg');
+  "
+>
+  <div>
+    <p class="text-uppercase tracking">100+ Projects Across The Globe</p>
+    <h1 class="hero-title">Women In Action</h1>
+    <p class="hero-text">
+      We work towards ensuring a life free from inequality and
+      discrimination for every woman.
+    </p>
+    <a href="/volunteer" class="btn btn-danger px-4 fw-bold text-white mt-5">
+      Volunteer
+    </a>
+  </div>
+</section>
+
+
+<section class="Middle-part py-5">
+  <div class="container">
+
+   
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <p class="fs-4">ABOUT US</p>
+        <h1 class="about-title">
+          Helping women never doubt that they are <br>
+          <b class="text-decoration-underline">Valuable & Powerful</b>
+        </h1>
+        <p class="fs-5 mt-4">
+          Sakhi Spark is a women empowerment organization dedicated to
+          creating equal opportunities for women through education,
+          skill development, and community support.
+        </p>
+        <a href="/about" class="btn btn-danger px-4 fw-bold text-white mt-3">
+          Read More
+        </a>
+      </div>
+    </div>
+
+   
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold text-danger">Our Key Programs</h2>
+        <p class="text-muted">
+          Creating opportunities that empower women to thrive
+        </p>
+      </div>
+    </div>
+  
+    
+     
+    
+    <div class="row g-4 mb-5 mt-3">
+       
+    <% program.map(function(val){%>
+      <div class="col-md-6 col-lg-4 mb-5">
+        <div class="card shadow-sm border-0">
+          <img src="/<%- val.program_image %>" class="card-img-top" height="200px">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold"><%= val.program_title %></h5>
+            <p class="text-muted"><%=val.program_description%></p>
+          </div>
+        </div>
+      </div>
+     
+      <% }) %>
+      <!-- <div class="col-md-6 col-lg-3">
+        <div class="card  shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787" class="card-img-top" height="200px">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold">Skill Development</h5>
+            <p class="text-muted">Vocational training programs to enhance employability.</p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" class="card-img-top" height="200px">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold">Health & Wellness</h5>
+            <p class="text-muted">Promoting physical and mental well-being for women.</p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-md-6 col-lg-3">
+        <div class="card shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" class="card-img-top" height="200px">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold">Legal Awareness</h5>
+            <p class="text-muted">Educating women about rights, laws, and legal support.</p>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-12 text-center">
+        <a href="/Program" class="btn btn-danger px-4 fw-bold text-white mt-3">
+      More Programs
+    </a>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+      
+   
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-danger">Success Stories</h2>
+      <p class="text-muted">
+        Real women. Real journeys. Real impact.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+    
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/images/anita's story.png"
+            class="card-img-top"
+            alt="Success Story 1"
+          >
+          <div class="card-body">
+            <h5 class="fw-semibold">Anita’s Journey</h5>
+            <p class="text-muted small">
+              From limited opportunities to financial independence through skill training.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/images/meena.png"
+            class="card-img-top"
+            alt="Success Story 2"
+          >
+          <div class="card-body">
+            <h5 class="fw-semibold">Meena’s Growth</h5>
+            <p class="text-muted small">
+              Empowered through education and community leadership programs.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/images/social awerness.png"
+            class="card-img-top"
+            alt="Success Story 3"
+          >
+          <div class="card-body">
+            <h5 class="fw-semibold">Social Awerness</h5>
+            <p class="text-muted small">
+              Gained confidence and stability through legal awareness support.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+      
+      
+ 
+    </div>
+
+  
+
+      </div>
+    </div>
+     </div>
+</section>
+<section class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="volunteer">
+          <div class="row">
+          <div class="col-5"> 
+                    
+          </div>
+          <div class="col-6 text-white p-5">
+            <h2 class="fw-bold text-center">Come Join Us</h2>
+            <div class="hr-line m-5"></div>
+            <p class="volunteer-text mt-0">We need to reshape our own perception of how we view ourselves. We have to step up as women and take the lead.</p>
+            <div class="text-center">
+             <a href="/volunteer" class="btn btn-danger px-4 fw-bold text-white mt-3">
+          Volunteer
+        </a>
+        </div>
+          </div>
+          <div class="col-1"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </section> 
+    
+    <section class="container my-5">
+  <div class="row align-items-center">
+    
+    <!-- Left Side: Text -->
+    <div class="col-md-6">
+      <p class="volunteer-text">
+        Join us in empowering women and spreading hope. 
+        Your contribution can make a real difference today.
+      </p>
+    </div>
+    <div class="col-2"></div>
+
+    <!-- Right Side: Image Card -->
+    <div class="col-md-4 donate text-center p-5">
+      <img src="/images/circular image.png" alt="logo" style="height:150px;width:150px;"><br>
+      
+       <a href="/donate" class="btn btn-danger px-4 fw-bold text-white mt-3">
+          Donate
+        </a>
+      
+      
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    
+    
+    
+    
+ 
+
+<%- include("footer.ejs") %>

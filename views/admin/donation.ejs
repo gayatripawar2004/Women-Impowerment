@@ -1,0 +1,36 @@
+<%-include("navbar.ejs")%>
+
+<div class="container-fluid bg-white m-4 p-5">
+    <h1 style="text-transform: capitalize;">Donation List</h1>
+  <div class="row">
+    <div class="col-md-12 mt-4">
+        <table class="table table-bordered">
+            <tr>
+                <th>Action</th>
+                <th>Sr.No</th>
+                <th>Donar Name</th>
+                <th>Donar Email</th>
+                <th>Donar Mobile</th>
+                <th>Why Donate</th>
+                <th>Donation Type</th>
+                <th>Donation Prize</th>
+            </tr>
+            <% donor_info_list.map(function(val,i){%>
+            
+                <tr>
+                    <td><a href="/admin/donar_info/<%=val.donar_id%>" class="btn btn-primary">Details</button></td>
+                     <td><%=i+1%></td>
+                    <td><%=val.donar_name%></td>
+                    <td><%=val.donar_email%></td>
+                    <td><%=val.donar_mobile%></td>
+                    <td><%=val.donation_for%></td>
+                    <td><%=val.donation_type%></td>
+                    <td><%=val.prize%></td>
+                   
+                </tr>
+            <%})%>
+        </table>
+    </div>
+  </div>
+</div>
+<%-include("footer.ejs")%>

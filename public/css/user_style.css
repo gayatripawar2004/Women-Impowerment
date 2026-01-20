@@ -1,0 +1,155 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.footer {
+    background-color:  #f78396;
+}
+
+    
+ 
+
+
+.hero-banner {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+} 
+
+.navbar {
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-family: serif;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+
+.tracking {
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+
+.btn-donate {
+  background-color: #e6a39a;
+  color: #fff;
+  border-radius: 0;
+  padding: 10px 25px;
+}
+
+.btn-donate:hover {
+  background-color: #d89087;
+  color: #fff;
+}
+
+
+.Middle-part{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  background-image:url("../images/back.png");
+   padding-bottom: 350px;
+  
+   
+  
+}
+
+.Middle-part:before{
+  filter: blur(8px);
+}
+
+.about-title{
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin:40px;
+}
+
+.success-stories {
+  background-color: #fff7f9;
+}
+
+.success-stories .card img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.success-stories .card {
+  border-radius: 12px;
+}
+
+.volunteer{ 
+  background-repeat: no-repeat;
+  
+  background-size:cover;
+  background-image: linear-gradient(rgba(1, 0, 0, 0.6), rgb(3, 0, 0)),url("../images/volunteer.png");    
+  
+}
+.volunteer-text{
+  font-size: 30px;
+  text-align: center;
+font-family: 'Comic Sans MS', cursive;  margin:40px;
+}
+
+  .hr-line {
+  border-bottom: 10px solid white;
+  border-radius:50px;
+}
+
+.donate{
+   background-repeat: no-repeat;
+  
+  background-size:cover;
+  background-image: linear-gradient(rgba(1, 0, 0, 0.6), rgb(3, 0, 0)),url("../images/donation.png");    
+  
+}
+
+.ngo-bg {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('../images/ngo-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.timeline li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.hr-line-founder{
+  border-bottom: 5px solid rgb(229, 25, 123);
+  border-radius:50px;
+}
+
+.signature {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+}
+
+
+
+.achievement-img img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+
+
