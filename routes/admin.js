@@ -21,7 +21,7 @@ route.get("/",async function(req,res){
         SELECT 
             'donation' AS type,
             'Donation Received' AS title,
-            CONCAT('₹', prize, ' donation received') AS description,
+            CONCAT('₹',prize, ' donation received') AS description,
             created_at AS time
         FROM donar_information
         ORDER BY created_at DESC
