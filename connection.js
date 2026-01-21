@@ -2,10 +2,10 @@ const mysql = require("mysql2");
 const util = require("util");
 
 const pool = mysql.createPool({
-    host: "bs0cflawbzpbcqdn1eoy-mysql.services.clever-cloud.com",
-    user: "ue2dkblryxvutm0v",
-    password: "0EmD0TFnUhZlczj2bo2G",
-    database: "bs0cflawbzpbcqdn1eoy",
+    host: "bjydansfugroisrlj0ls-mysql.services.clever-cloud.com",
+    user: "ugyf4hcdzulimg5e",
+    password: "Mj98589FLIhrXHSLzqAb",
+    database: "bjydansfugroisrlj0ls",
    
 });
 
